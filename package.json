@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "build": "cd pokedex-cliente && npm install && npm run build"
+    "build": "cd pokedex-cliente && npm run build"
   },
   "keywords": [],
   "author": "",

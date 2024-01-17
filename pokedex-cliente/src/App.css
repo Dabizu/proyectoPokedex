@@ -36,3 +36,55 @@
     transform: rotate(360deg);
   }
 }
+
+#pokedex{
+  width: 500px;
+  height: 700px;
+  background-color: red;
+  border-radius: 20px;
+}
+
+#informacion{
+  width: 300px;
+  height: 300px;
+  background-color: black;
+}
+
+#lista{
+  width: 300px;
+  height: 300px;
+  background-color: black;
+  overflow-y: scroll;
+}
+
+.btn {
+  width: 100%;
+  border: none; 
+  color: black; 
+  padding: 14px 28px; 
+  cursor: pointer; 
+  border-radius: 5px; 
+}
+.warning {background-color: white; border: 2px solid #ff9800;} 
+.warning:hover {background: #e68a00; color: white;}
+#imagenPokemon{
+  width: 200px;
+  height: 200px;
+}
+
+.box01{
+  width: 300px;
+  height: 25px;
+  border: 5px solid red;
+  background: red;
+  color: black;
+  display: flex;
+  align-items: flex-end;
+}
+.box02{
+  color: aliceblue;
+}
+
+#generaPdf{
+  width: 100%;
+}
