@@ -31,11 +31,9 @@ function App() {
         if (data.type === "error") {
           alert("no es posible su paginacion")
         } else {
-          //var plantilla = '';
           document.getElementById("lista").innerHTML = "";
           data.text.forEach(element => {
             console.log(element.name);
-            //plantilla = plantilla + '<button class="btn warning" onclick=">' + element.name + '</button>'
             var button = document.createElement("button");
             button.innerText = element.name;
             button.setAttribute("class", "btn warning");
@@ -45,7 +43,6 @@ function App() {
             }
             document.getElementById("lista").append(button);
           });
-          //document.getElementById("lista").innerHTML = plantilla;
 
         }
 
@@ -68,11 +65,6 @@ function App() {
           console.log(data.abilities[i].ability.name)
           arrayAbilidades.push(data.abilities[i].ability.name);
         }
-        /*
-        data.abilities.forEach(element => {
-          console.log(element.name)
-          arrayAbilidades.push(element.name);
-        });*/
         setAbilidades(arrayAbilidades);
 
         setPeso(data.weight);
@@ -82,12 +74,6 @@ function App() {
           arrayMoves.push(data.moves[i].move.name);
         }
         setMoves(arrayMoves);
-        /*
-        
-        data.moves.forEach(element => {
-          arrayMoves.push(element.name)
-        });
-        */
         document.getElementById("imagenPokemon").src = data.sprites.other.dream_world.front_default
       });
   }
@@ -98,7 +84,6 @@ function App() {
         format: 'a4',
         unit: 'px',
       });
-      //pdf.addImage(imagen,'PNG',0,0);
       
       var plantilla='<div><img src="'+imagen+'" width=100 height=100/> <p>nombre:'+nombre+'</p>   peso:'+peso+'</div>';
       console.log(abilidades)
@@ -119,32 +104,6 @@ function App() {
         }
       });
 
-      /*
-      html2canvas(document.querySelector('.imagenPokemon'), {}).then((canvas) => {
-        //document.body.appendChild(canvas); // if you want see your screenshot in body.
-        const imgData = canvas.toDataURL('image/png');
-        //const pdf = new jsPDF('p', 'in', 'a3'); //set pdf size to 8.5in x 11in Portrait
-        pdf.addImage(imgData, 'PNG', 0, 0);
-        //pdf.save('CV.pdf');
-      });*/
-
-      //console.log(imagen)
-      /*
-      var img=new Image();
-      img.src=imagen;
-      //pdf.addImage(img,'PNG',0,0);
-      pdf.addImage(img, 'PNG', 25, 30, 170, 180); 
-  *
-      pdf.text('Nombre: '+nombre, 10,10);
-      pdf.text("abilidades",10,20);
-      //pdf.text(abilidades,10,20)
-      
-      /*
-      abilidades.forEach(element => {
-        pdf.text(element,10,20);
-      });*/
-
-      
     } else {
       alert("no haz seleccionado un pokemon por lo tanto no puedes genera pdf");
     }
@@ -154,19 +113,6 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-
         <p>{!data ? "Loading..." : data}</p>
         <div id="pokedex">
 
